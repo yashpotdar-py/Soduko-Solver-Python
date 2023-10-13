@@ -100,7 +100,6 @@ class SudokuGenerator:
             i, j = cells.pop()
             self.board[i][j] = 0
 
-
 class SudokuSolver:
     def __init__(self, board):
         """
@@ -190,15 +189,12 @@ if __name__ == "__main__":
     sudoku_board = [[0 for _ in range(9)] for _ in range(9)]
 
     sudoku_generator = SudokuGenerator(sudoku_board)
-    sudoku_generator.print_board()
 
-    sudoku_solver = SudokuSolver(sudoku_board)
     print("Original Sudoku Board:")
-    sudoku_solver.print_board()
+    sudoku_generator.print_board()
     print("#############################")
 
-    if sudoku_solver.solve():
-        print("Solved Sudoku:")
-        sudoku_solver.print_board()
-    else:
-        print("No solution exists.")
+    sudoku_solver = SudokuSolver(sudoku_board)
+    print("\nSolved Sudoku:")
+    sudoku_solver.solve()
+    sudoku_solver.print_board()
