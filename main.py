@@ -87,13 +87,6 @@ class SudokuGenerator:
     def remove_random_values(self):
         """
         Remove a specified number of random values from the Sudoku board and set them to zero.
-
-        Args:
-            board (list): A 9x9 Sudoku board represented as a list of lists.
-            num_to_remove (int): The number of values to remove.
-
-        Returns:
-            None
         """
         num_to_remove = random.randint(0, 81)
         if num_to_remove < 0 or num_to_remove > 81:
@@ -198,7 +191,7 @@ if __name__ == "__main__":
 
     sudoku_generator = SudokuGenerator(sudoku_board)
     sudoku_generator.print_board()
-    
+
     sudoku_solver = SudokuSolver(sudoku_board)
     print("Original Sudoku Board:")
     sudoku_solver.print_board()
