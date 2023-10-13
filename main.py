@@ -95,7 +95,7 @@ class SudokuGenerator:
         Returns:
             None
         """
-        num_to_remove = random.randint(0,81)
+        num_to_remove = random.randint(0, 81)
         if num_to_remove < 0 or num_to_remove > 81:
             raise ValueError(
                 "Number of values to remove must be between 0 and 81.")
@@ -197,7 +197,8 @@ if __name__ == "__main__":
     sudoku_board = [[0 for _ in range(9)] for _ in range(9)]
 
     sudoku_generator = SudokuGenerator(sudoku_board)
-
+    sudoku_generator.print_board()
+    
     sudoku_solver = SudokuSolver(sudoku_board)
     print("Original Sudoku Board:")
     sudoku_solver.print_board()
