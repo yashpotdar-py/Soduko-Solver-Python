@@ -100,6 +100,9 @@ class SudokuGenerator:
             i, j = cells.pop()
             self.board[i][j] = 0
 
+    def __del__(self):
+        self.board = [[0 for _ in range(9)] for _ in range(9) ]
+
 class SudokuSolver:
     def __init__(self, board):
         """
